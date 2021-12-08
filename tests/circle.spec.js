@@ -54,6 +54,8 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
   });
   // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
   it('Verifica se a função retorna, dentro de um objeto, num objeto, os dados corretos de um círculo de raio 3.', () => {
-    expect(circle(3).circumference).toBeCloseTo(18.84); //a area ja foi verificada no item acima 
+    const objCircle =  circle(3);
+    objCircle.area = Number(parseFloat(objCircle.area).toPrecision(4));
+    expect(objCircle).toMatchObject({radius: 3, area: 28.26, circumference: 18.84});
   });
 });
